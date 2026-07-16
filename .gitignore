@@ -1,0 +1,7 @@
+# Local dev tooling & editor config (not part of the published site)
+.claude/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
