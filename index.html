@@ -442,6 +442,10 @@
 
         <div class="contact-form-wrap reveal">
           <form class="contact-form" id="contactForm" novalidate>
+            <!-- Web3Forms delivery — access_key is a public client-side key -->
+            <input type="hidden" name="access_key" value="8fea7ac3-f86a-4c32-8010-f8ef2d061ce5" />
+            <input type="hidden" name="subject" value="New consultation request from the KAMIT LEDGERWORKS website" />
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
             <div class="field">
               <label for="name">Full name</label>
               <input type="text" id="name" name="name" autocomplete="name" required placeholder="Jane Doe" aria-describedby="err-name" />
@@ -481,6 +485,9 @@
             <p class="form-success" id="formSuccess" role="status" hidden>
               <span class="check-badge" aria-hidden="true">✓</span>
               Thank you - your request is in. A KAMIT advisor will reach out within one business day.
+            </p>
+            <p class="form-fail" id="formFail" role="alert" hidden>
+              Sorry - something went wrong sending your message. Please try again, or email us directly at kamitledgerworks@gmail.com.
             </p>
           </form>
         </div>

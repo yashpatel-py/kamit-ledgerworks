@@ -163,6 +163,7 @@
     var form = document.getElementById("contactForm");
     if (!form) return;
     var success = document.getElementById("formSuccess");
+    var fail = document.getElementById("formFail");
 
     var validators = {
       name: function (v) { return v.trim().length >= 2 || "Please enter your name."; },
@@ -214,10 +215,11 @@
       if (!ok) { firstBad && firstBad.focus(); return; }
 
       var btn = form.querySelector('button[type="submit"]');
+      var btnLabel = btn ? btn.textContent : "";
       if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      if (fail) fail.hidden = true;
 
-      // Simulated submission (no backend). Swap for a real endpoint when ready.
-      window.setTimeout(function () {
+      var showSuccess = function () {
         form.querySelectorAll(".field, .form-note, button[type=submit]").forEach(function (el) {
           el.style.display = "none";
         });
@@ -229,7 +231,23 @@
           success.focus({ preventScroll: true });
           success.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "center" });
         }
-      }, 700);
+      };
+      var showError = function () {
+        if (btn) { btn.disabled = false; btn.textContent = btnLabel; }
+        if (fail) {
+          fail.hidden = false;
+          fail.setAttribute("tabindex", "-1");
+          fail.focus({ preventScroll: true });
+        }
+      };
+
+      // Real submission via Web3Forms — AJAX keeps the inline success message.
+      fetch("https://api.web3forms.com/submit", { method: "POST", body: new FormData(form) })
+        .then(function (res) {
+          return res.json().then(function (j) { return j; }, function () { return { success: res.ok }; });
+        })
+        .then(function (json) { if (json && json.success) { showSuccess(); } else { showError(); } })
+        .catch(showError);
     });
   }
 })();
