@@ -59,6 +59,14 @@
         <stop offset="1" stop-color="#4FA98F" stop-opacity="0" />
       </linearGradient>
 
+      <!-- KLW growth-arrow gradients: base blends into the letters, tip greens out -->
+      <linearGradient id="klwArrowLight" x1="0" y1="226" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#17395B" /><stop offset="0.5" stop-color="#2C7E58" /><stop offset="1" stop-color="#54BA4A" />
+      </linearGradient>
+      <linearGradient id="klwArrowDark" x1="0" y1="226" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#F4F1E8" /><stop offset="0.45" stop-color="#4FA98F" /><stop offset="1" stop-color="#54BA4A" />
+      </linearGradient>
+
       <!-- Wax-seal KLW monogram, used in nav / footer -->
       <symbol id="sealK" viewBox="0 0 48 48">
         <circle cx="24" cy="24" r="22.2" fill="none" stroke="url(#goldGrad)" stroke-width="1.1" />
@@ -72,8 +80,14 @@
   <header class="site-header" id="siteHeader">
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="KAMIT LEDGERWORKS home">
-        <svg class="brand-seal" viewBox="0 0 48 48" aria-hidden="true"><use href="#sealK" /></svg>
-        <span class="brand-word">Kamit<span class="brand-word-b">Ledgerworks</span></span>
+        <svg class="brand-logo" viewBox="10 30 565 320" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="46" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M48,82 L48,226" /><path d="M52,154 L142,82" /><path d="M52,154 L154,226" />
+            <path d="M196,82 L196,226 L288,226" /><path d="M322,82 L374,226 L418,140 L462,226" />
+          </g>
+          <path fill="url(#klwArrowLight)" d="M441.1,216.4 L494.4,101.1 L469.9,89.7 L548,40 L560.7,131.7 L536.2,120.3 L482.9,235.6 Z" />
+          <text x="294" y="334" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="42" letter-spacing="7" fill="currentColor" textLength="474" lengthAdjust="spacingAndGlyphs">KAMIT LEDGERWORKS</text>
+        </svg>
       </a>
 
       <nav class="nav-links" aria-label="Primary">
@@ -344,7 +358,7 @@
             <div class="hairline hairline--gold" aria-hidden="true"></div>
             <figcaption class="t-person">
               <span class="avatar" aria-hidden="true">DW</span>
-              <span class="t-meta"><strong>Dana Whitfield</strong><span>Northwind Provisions</span></span>
+              <span class="t-meta"><strong>Dana Whitfield</strong></span>
             </figcaption>
           </figure>
 
@@ -354,7 +368,7 @@
             <div class="hairline hairline--gold" aria-hidden="true"></div>
             <figcaption class="t-person">
               <span class="avatar" aria-hidden="true">ME</span>
-              <span class="t-meta"><strong>Marcus Elle</strong><span>Harlow &amp; Vine</span></span>
+              <span class="t-meta"><strong>Marcus Elle</strong></span>
             </figcaption>
           </figure>
 
@@ -364,7 +378,7 @@
             <div class="hairline hairline--gold" aria-hidden="true"></div>
             <figcaption class="t-person">
               <span class="avatar" aria-hidden="true">PR</span>
-              <span class="t-meta"><strong>Priya Raman</strong><span>Brightfield Robotics</span></span>
+              <span class="t-meta"><strong>Priya Raman</strong></span>
             </figcaption>
           </figure>
         </div>
@@ -501,8 +515,14 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <a class="brand" href="#top" aria-label="KAMIT LEDGERWORKS home">
-          <svg class="brand-seal" viewBox="0 0 48 48" aria-hidden="true"><use href="#sealK" /></svg>
-          <span class="brand-word">Kamit<span class="brand-word-b">Ledgerworks</span></span>
+          <svg class="brand-logo" viewBox="10 30 565 320" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="46" stroke-linecap="square" stroke-linejoin="miter">
+              <path d="M48,82 L48,226" /><path d="M52,154 L142,82" /><path d="M52,154 L154,226" />
+              <path d="M196,82 L196,226 L288,226" /><path d="M322,82 L374,226 L418,140 L462,226" />
+            </g>
+            <path fill="url(#klwArrowDark)" d="M441.1,216.4 L494.4,101.1 L469.9,89.7 L548,40 L560.7,131.7 L536.2,120.3 L482.9,235.6 Z" />
+            <text x="294" y="334" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="42" letter-spacing="7" fill="currentColor" textLength="474" lengthAdjust="spacingAndGlyphs">KAMIT LEDGERWORKS</text>
+          </svg>
         </a>
         <p class="footer-blurb">KAMIT LEDGERWORKS is a full-service accounting and advisory firm helping founders and business owners keep clean books, minimize taxes, and make sharper decisions.</p>
         <p class="footer-tag">Precision-built finance for businesses meant to last.</p>
