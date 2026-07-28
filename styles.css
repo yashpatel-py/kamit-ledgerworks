@@ -624,6 +624,10 @@ a.c-val:hover{color:var(--accent);}
 .footer-brand .brand-word-b{color:var(--on-navy);}
 .footer-blurb{margin-top:1.1rem;font-size:.92rem;line-height:1.6;color:var(--on-navy-muted);max-width:26rem;}
 .footer-tag{margin-top:1rem;font-family:var(--font-display);font-style:italic;font-size:1rem;color:var(--on-navy-gold);}
+.footer-social{margin-top:1.4rem;display:flex;gap:.6rem;}
+.social-link{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:var(--on-navy-soft);border:1px solid var(--border-on-navy);transition:color var(--dur) var(--ease),border-color var(--dur) var(--ease),background var(--dur) var(--ease),transform var(--dur) var(--ease);}
+.social-link svg{width:20px;height:20px;}
+.social-link:hover{color:var(--on-navy-gold);border-color:var(--border-gold-strong);background:rgba(231,211,161,.06);transform:translateY(-2px);}
 .footer-col h3{font-family:var(--font-body);font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:var(--on-navy);margin-bottom:1.1rem;font-weight:600;}
 .footer-col a,.footer-contact p{display:block;font-size:.92rem;color:var(--on-navy-muted);padding:.32rem 0;transition:color var(--dur) var(--ease);}
 .footer-col a:hover{color:var(--on-navy-gold);}
